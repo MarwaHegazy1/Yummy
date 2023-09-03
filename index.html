@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/index_style.css">
+        <link rel="icon" href="images/.jpgy.jpg" sizes="32x32">
+        <title> Yummy</title>
+    </head>
+
+    <body>
+        <div class="loadingScreen  justify-content-center align-items-center">
+            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+
+        <aside class="asideSection vh-100 d-flex">   
+            <div class="links-iconYummy bg-black p-4 d-flex flex-column justify-content-between">
+               <div class="wow bounceInUp d-flex flex-column justify-content-between"  data-wow-duration="4s">
+                    <a onclick="getSearch()"  class="text-white mb-3">Search</a>
+                    <a  onclick="getCategories()" class="text-white mb-3">Categories</a>
+                    <a  onclick="getArea()" class="text-white mb-3">Area</a>
+                    <a  onclick="getIngredients()" class="text-white mb-3">Ingredients</a>
+                    <a  onclick="getContactUs()" class="text-white ">Contact Us</a>
+               </div>
+               <div class="">
+                <ul class="d-flex">
+                    <li class="pe-1"><i class="fa-brands fa-facebook text-white "></i></li>
+                    <li class="pe-1"><i class="fa-brands fa-twitter text-white "></i></li>
+                    <li class=""><i class="fa-solid fa-globe text-white "></i></li>
+                </ul>
+                <p class="text-white ">Copyright Â© 2019 All Rights Reserved.</p>
+               </div>
+            </div>
+            <div class="iconYummy d-flex flex-column justify-content-between  p-3 bg-white text-center">
+                <div><a href="index.html"><img src="images/.jpgy.jpg" alt="" class=" img-fluid rounded-circle"></a></div>
+                <div>
+                    <i class="fa-solid fa-xmark fa-2x fa-x text-black"></i>
+                    <i class="fa-solid fa-bars  fa-2x text-black"></i>
+                </div>
+                <ul class="">
+                    <li><i class="fa-solid fa-globe text-black"></i></li>
+                    <li><i class="fa-solid fa-share-nodes text-black"></i></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="welcome">
+            <div class="container py-5">
+                <div class="row mb-4 welCont ps-5">
+                  
+                </div>
+              </div>
+        </section>
+
+        <section class="categories">
+            <div class="container py-5">
+              <div class="row mb-4 catCont ps-5">
+                
+              </div>
+            </div>
+         </section>
+  
+        <section class="meals" >
+          <div class="container py-5">
+            <div class="row mb-4 selectedCat ps-5 row-gap-4">
+               
+            </div>
+          </div>
+        </section>
+
+        <section class="searchCat" id="searchSite">
+          <div class=" container py-4 ps-5" id="searchSite">
+            <div class="row">
+                <div class="col-lg-6 mb-3">
+                    <input type="text" oninput="searchByName(this.value)" class="form-control " placeholder="Search By Name">
+                </div>
+                <div class="col-lg-6">
+                    <input type="text"  oninput="searchByLetter(this.value)" class="form-control " placeholder="Search By First Letter">
+                </div>
+            </div>
+            <div class="row searchRow py-5 row-gap-3" >
+             
+            </div>
+          </div>
+       </section>
+
+       <section class="area p-5">
+        <div class="container">
+          <div class="d-flex flex-wrap areaDiv ">
+
+          </div>
+        </div>
+       </section>
+
+       <section class="areaMeals p-5">
+         <div class="container">
+            <div class="d-flex flex-wrap areaRow ">
+                
+            </div>
+         </div>
+        </section>
+
+       <section class="ingredients">
+        <div class="container">
+            <div class="d-flex flex-wrap ingredientsDiv text-center ps-5">
+               
+            </div>
+
+        </div>
+       </section>
+
+       <section class="ingredMeals">
+        <div class="container">
+            <div class="d-flex flex-wrap ingredientsDis text-center">
+                
+            </div>
+        </div>
+       </section>
+
+        <section class="contactUs" id="contactUs">
+          <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="container p-5">
+                <div class="row px-5">
+                    <div class="col-md-6 mb-4">
+                        <input type="text" class="form-control mb-3 " id="inputName" onkeyup="validateName() , inputsValidation()" placeholder="Enter Your Name" onkeyup="nameValide()">
+                        <p class="msg text-center p-3 rounded-2 d-none" id="nameMsg">Enter valid name</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="email" class="form-control mb-3 " id="inputEmail"  onkeyup="validateEmail() , inputsValidation()" placeholder="Enter Your Email" onkeyup="emailValid()">
+                        <p class="msg text-center  p-3 rounded-2 d-none" id="emailMsg">Email not valid *example@yyy.zzz</p>
+                        
+                    </div>
+                </div>
+                <div class="row px-5">
+                    <div class="col-md-6 mb-4">
+                        <input type="text" class="form-control mb-3 " id="inputPhone"  onkeyup="phoneValidation() , inputsValidation()" placeholder="Enter Your Phone" onkeyup="phoneValid()">
+                        <p class="msg text-center p-3 rounded-2 d-none" id="phoneMsg">Enter valid Phone Number</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="number" class="form-control mb-3 " id="inputAge"  onkeyup="ageValidation() , inputsValidation()" placeholder="Enter Your Age" onkeyup="ageValid()">
+                        <p class="msg ageMsg text-center p-3 rounded-2 d-none" id="ageMsg">Enter valid age</p>
+                    </div>
+                </div>
+                <div class="row px-5">
+                    <div class="col-md-6 mb-4">
+                        <input type="password" class="form-control mb-3 " id="inputPass" onkeyup="passwordValidation() , inputsValidation()"  placeholder="Enter Your Password" onkeyup="passValid()">
+                        <p class="msg text-center p-3 rounded-2 d-none" id="passMsg">Enter valid password *Minimum eight characters, at least one letter and one number:*</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="password" class="form-control mb-3 " id="inputRepass"  onkeyup="repasswordValidation() , inputsValidation()" placeholder="Repassword" onkeyup="repassValid()">
+                        <p class="msg text-center p-3 rounded-2 d-none" id="repassMsg">Enter valid repassword</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                  
+                    <button class="btn btn-outline-danger " disabled id="submitBtn" type="submit">sumbit</button>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mealDes">
+            <div class="container py-5">
+                <div class="row mealDesRow ps-5" >
+
+                </div>
+            </div>
+        </section>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+        <script src="js/mine.js"></script>
+    </body>
+</html>
+
+
